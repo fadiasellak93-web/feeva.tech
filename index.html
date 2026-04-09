@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feeva tech</title>
+<style>
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    direction: rtl;
+    background: #F9FAFB;
+    color: #111827;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #4F46E5, #9333EA);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.btn {
+    background: #FBBF24;
+    color: #111827;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #FFD54F;
+}
+
+/* Features */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 250px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Form */
+.form-box {
+    background: white;
+    padding: 40px 30px;
+    max-width: 450px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+input, button {
+    width: 90%;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7C3AED;
+}
+
+/* Footer */
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+footer strong {
+    color: #FBBF24;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Feeva tech</h1>
+    <p>🚀 Learn. Code. Create.</p>
+    <a href="#form" class="btn">سجل الآن</a>
+</header>
+
+<!-- Features Section -->
+<section>
+    <h2>🎯 ماذا ستتعلم؟</h2>
+    <div class="features">
+        <div class="card">أساسيات البرمجة</div>
+        <div class="card">(html_Css)</div>
+        <div class="card">أكواد البرمحة </div>
+        <div class="card">مشاريع تطبيقية</div>
+    </div>
+</section>
+
+<!-- Form Section -->
+<section id="form">
+    <h2>📩 احجز مكانك الآن</h2>
+   <form id="registrationForm">
+    <input type="text" id="name" placeholder="الاسم" required />
+    <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+    <input type="tel" id="phone" placeholder="رقم الهاتف" required />
+    <button type="submit">تسجيل</button>
+  </form>
+
+  <!-- كود WhatsApp -->
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // يمنع إعادة تحميل الصفحة عند الضغط على الزر
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        const whatsappMessage = encodeURIComponent(`مرحباً! تم تسجيل جديد:\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`);
+
+        // ضع هنا رقمك على واتساب بدون +
+        const whatsappNumber = '213656101563
+';
+
+        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+    });
+  </script>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 جميع الحقوق محفوظة - <strong>Feeva  tech</strong></p>
+</footer>
+
+<script>
+function sendData(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    const googleScriptURL = "https://script.google.com/macros/s/AKfycbxYjzJDT_TaZN-9XU4Dz6XQC29OMaBrrcQPucYiiy92MAhpx-d8vg1r2uV0zhe6Db6BDA/exec";
+
+    fetch(googleScriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone
+        })
+    });
+
+    alert("تم التسجيل بنجاح!");
+}        const whatsappNumber = '213656101563';
+
+        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+    });
+ 
+
+</body>
+</html>
