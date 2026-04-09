@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9ELMWMZMD7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9ELMWMZMD7');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feeva Tech</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    direction: rtl;
+    background: #F9FAFB;
+    color: #111827;
+}
+
+header {
+    background: linear-gradient(135deg, #4F46E5, #9333EA);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 42px;
+}
+
+.btn {
+    background: #FBBF24;
+    color: #111827;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    width: 220px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+input, button {
+    width: 90%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Feeva Tech</h1>
+    <p>🚀 Learn. Code. Create.</p>
+    <a href="#form" class="btn">سجل الآن</a>
+</header>
+
+<section>
+    <h2>🎯 ماذا ستتعلم؟</h2>
+    <div class="features">
+        <div class="card">أساسيات البرمجة</div>
+        <div class="card">لغة الترميز</div>
+        <div class="card">لغة التنسيقcss</div>
+        <div class="card">اساسيات تحسين تجربة المستحدم</div>
+    </div>
+</section>
+
+<section id="form">
+    <h2>📩 احجز مكانك الآن</h2>
+
+    <div class="form-box">
+        <form onsubmit="sendData(event)">
+            <input type="text" id="name" placeholder="الاسم" required>
+            <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+            <input type="text" id="phone" placeholder="رقم الهاتف" required>
+            <button type="submit">تسجيل</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 جميع الحقوق محفوظة - Feeva Tech</p>
+</footer>
+
+<script>
+function sendData(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    // 🔗https://script.google.com/macros/s/AKfycbwWDYAM-AGYu308_KySjHFJG4snZ-FM4GxiOQGjOUCsZ6v3FgI4_iz4uWgH77hPksFPOQ/exec ضع رابط Google Script هنا
+    const googleScriptURL = "PUT_YOUR_LINK_HERE";
+
+    fetch(googleScriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone
+        })
+    });
+
+    // 📲 WhatsApp
+    const message = encodeURIComponent(
+        `تسجيل جديد:\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`
+    );
+
+    // 🔢 ضع رقمك هنا
+    const yourNumber = "213656101563";
+
+    window.open(`https://wa.me/${yourNumber}?text=${message}`, "_blank");
+
+    alert("تم التسجيل بنجاح!");
+}
+</script>
+
+</body>
+</html>
